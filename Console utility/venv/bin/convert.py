@@ -1,0 +1,4 @@
+#!/Users/stanislav/Desktop/utility/venv/bin/python3
+# EASY-INSTALL-SCRIPT: 'convert==0.0.0','convert.py'
+__requires__ = 'convert==0.0.0'
+__import__('pkg_resources').run_script('convert==0.0.0', 'convert.py')
