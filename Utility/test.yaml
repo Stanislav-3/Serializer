@@ -1,0 +1,133 @@
+.META:
+  '140266556390992':
+    .class:
+      attrs:
+      - .collection_type: tuple
+        .list:
+        - __doc__
+        - null
+        - data
+      - .collection_type: tuple
+        .list:
+        - __module__
+        - __main__
+        - data
+      - .collection_type: tuple
+        .list:
+        - y
+        - 2
+        - data
+      mro:
+      - .collection_type: tuple
+        .list: []
+      - null
+    .metatype: class
+    .module: __main__
+    .name: c
+  '140266556391936':
+    .class:
+      attrs:
+      - .collection_type: tuple
+        .list:
+        - __doc__
+        - null
+        - data
+      - .collection_type: tuple
+        .list:
+        - __init__
+        - .metaid: '4522358240'
+        - method
+      - .collection_type: tuple
+        .list:
+        - __module__
+        - __main__
+        - data
+      - .collection_type: tuple
+        .list:
+        - y
+        - 2
+        - data
+      mro:
+      - .collection_type: tuple
+        .list:
+        - .metaid: '140266556390992'
+      - null
+    .metatype: class
+    .module: __main__
+    .name: cl
+  '4522358240':
+    .code:
+      co_argcount: 1
+      co_cellvars:
+        .collection_type: tuple
+        .list: []
+      co_code:
+      - 100
+      - 1
+      - 116
+      - 0
+      - 23
+      - 0
+      - 124
+      - 0
+      - 106
+      - 1
+      - 23
+      - 0
+      - 124
+      - 0
+      - 95
+      - 2
+      - 100
+      - 0
+      - 83
+      - 0
+      co_consts:
+        .collection_type: tuple
+        .list:
+        - null
+        - 5
+      co_filename: /Users/stanislav/Desktop/Serializer/Utility/main.py
+      co_firstlineno: 21
+      co_flags: 67
+      co_freevars:
+        .collection_type: tuple
+        .list: []
+      co_kwonlyargcount: 0
+      co_lnotab:
+      - 0
+      - 1
+      co_name: __init__
+      co_names:
+        .collection_type: tuple
+        .list:
+        - x
+        - y
+        - a
+      co_nlocals: 1
+      co_posonlyargcount: 0
+      co_stacksize: 2
+      co_varnames:
+        .collection_type: tuple
+        .list:
+        - self
+    .defaults: null
+    .metatype: func
+    .module: __main__
+    .name: __init__
+    .refs:
+      .collection_type: tuple
+      .list:
+      - {}
+      - a:
+        - 1
+        - 2
+        - 3
+        - 4
+        x: 3
+      - {}
+      - .collection_type: set
+        .list:
+        - y
+.OBJ:
+  .metaid: '140266556391936'
