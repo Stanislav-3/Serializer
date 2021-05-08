@@ -1,0 +1,4 @@
+#!/Users/stanislav/Desktop/Serializer/Lib/venv/bin/python
+# EASY-INSTALL-SCRIPT: 'convert==0.3.0','convert'
+__requires__ = 'convert==0.3.0'
+__import__('pkg_resources').run_script('convert==0.3.0', 'convert')

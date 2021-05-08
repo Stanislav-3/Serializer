@@ -12,8 +12,5 @@ setup(
     description='Custom serializer',
     author='Stanislav Korenevsky',
     install_requires=[],
-    # setup_requires=['pytest-runner'],
-    # tests_require=['pytest'],
-    # test_suite='tests',
     scripts=['bin/convert']
 )

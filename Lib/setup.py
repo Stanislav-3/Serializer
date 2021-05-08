@@ -13,7 +13,4 @@ setup(
     author='Stanislav Korenevsky',
     install_requires=['pyyaml'],
     python_requires='>=3.8',
-    # setup_requires=['pytest-runner'],
-    # tests_require=['pytest'],
-    # test_suite='tests',
 )

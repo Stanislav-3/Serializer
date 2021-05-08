@@ -1,5 +1,5 @@
 .META:
-  '140338516236336':
+  '140238848954144':
     .class:
       attrs:
       - .collection_type: tuple
@@ -10,7 +10,7 @@
       - .collection_type: tuple
         .list:
         - __init__
-        - .metaid: '4449587984'
+        - .metaid: '4332747360'
         - method
       - .collection_type: tuple
         .list:
@@ -34,7 +34,7 @@
     .metatype: class
     .module: tests
     .name: example_class_1
-  '4449587984':
+  '4332747360':
     .code:
       co_argcount: 1
       co_cellvars:
@@ -95,4 +95,4 @@
   .fields:
     b: 10
     d: new instance field
-  .metaid: '140338516236336'
+  .metaid: '140238848954144'
