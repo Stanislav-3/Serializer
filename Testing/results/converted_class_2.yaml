@@ -1,5 +1,5 @@
 .META:
-  '140591698348320':
+  '140338516236336':
     .class:
       attrs:
       - .collection_type: tuple
@@ -10,7 +10,7 @@
       - .collection_type: tuple
         .list:
         - __init__
-        - .metaid: '4337672976'
+        - .metaid: '4449587984'
         - method
       - .collection_type: tuple
         .list:
@@ -34,7 +34,7 @@
     .metatype: class
     .module: tests
     .name: example_class_1
-  '140591698349504':
+  '140338516237280':
     .class:
       attrs:
       - .collection_type: tuple
@@ -45,7 +45,7 @@
       - .collection_type: tuple
         .list:
         - __init__
-        - .metaid: '4337673120'
+        - .metaid: '4449588128'
         - method
       - .collection_type: tuple
         .list:
@@ -65,17 +65,17 @@
       - .collection_type: tuple
         .list:
         - some_class_func
-        - .metaid: '4337673264'
+        - .metaid: '4449588272'
         - method
       mro:
       - .collection_type: tuple
         .list:
-        - .metaid: '140591698348320'
+        - .metaid: '140338516236336'
       - null
     .metatype: class
     .module: tests
     .name: example_class_2
-  '4337672976':
+  '4449587984':
     .code:
       co_argcount: 1
       co_cellvars:
@@ -98,7 +98,7 @@
         - null
         - 10
       co_filename: /Users/stanislav/Desktop/Serializer/Testing/tests.py
-      co_firstlineno: 54
+      co_firstlineno: 56
       co_flags: 67
       co_freevars:
         .collection_type: tuple
@@ -132,7 +132,7 @@
       - .collection_type: set
         .list:
         - b
-  '4337673120':
+  '4449588128':
     .code:
       co_argcount: 2
       co_cellvars:
@@ -174,7 +174,7 @@
         .list:
         - null
       co_filename: /Users/stanislav/Desktop/Serializer/Testing/tests.py
-      co_firstlineno: 65
+      co_firstlineno: 67
       co_flags: 3
       co_freevars:
         .collection_type: tuple
@@ -211,7 +211,7 @@
       .collection_type: tuple
       .list:
       - __class__:
-          .metaid: '140591698349504'
+          .metaid: '140338516237280'
       - {}
       - str: null
         super:
@@ -220,9 +220,9 @@
       - .collection_type: set
         .list:
         - __init__
-        - c
         - e
-  '4337673264':
+        - c
+  '4449588272':
     .code:
       co_argcount: 1
       co_cellvars:
@@ -252,7 +252,7 @@
         - i'm doing something...
         - other string
       co_filename: /Users/stanislav/Desktop/Serializer/Testing/tests.py
-      co_firstlineno: 69
+      co_firstlineno: 71
       co_flags: 67
       co_freevars:
         .collection_type: tuple
@@ -291,4 +291,4 @@
       - .collection_type: set
         .list: []
 .OBJ:
-  .metaid: '140591698349504'
+  .metaid: '140338516237280'

@@ -138,12 +138,48 @@ class TestClass:
         assert dir(res) == dir(example_class_2)
         assert res.a == example_class_2.a
         assert res.c == example_class_2.c
+
         #instances comparison
         assert isinstance(res('~$~'), example_class_2)
         assert res.some_class_func(res) == example_class_2.some_class_func(example_class_2)
         assert res('$').some_class_func() == example_class_2('$').some_class_func()
         assert res('a string').e == example_class_2('a string').e
 
+    @pytest.mark.parametrize('ser_type', serializer_types)
+    def test_class_3(self, ser_type):
+        serializer = create_serializer(ser_type)
+        res = serializer.loads(serializer.dumps(example_class_3))
+        assert dir(res) == dir(example_class_3)
+        assert res.static_method() == example_class_3.static_method()
+        assert res.class_method() == example_class_3.class_method()
+
+    # @pytest.mark.parametrize('ser_type', serializer_types)
+    # def test_class_3(self, ser_type):
+    #     serializer = create_serializer(ser_type)
+    #     res = serializer.loads(serializer.dumps(example_class_4))
+    #     assert dir(res) == dir(example_class_4)
+
+    @pytest.mark.parametrize('ser_type', serializer_types)
+    def test_Metaclass_1(self, ser_type):
+        serializer = create_serializer(ser_type)
+        res = serializer.loads(serializer.dumps(example_Metaclass_1))
+        assert dir(res) == dir(example_Metaclass_1)
+
+        # instances comparison
+        res_instance = res('Name', (), {'field': 'just a field'})
+        res_instance = serializer.loads(serializer.dumps(res_instance))
+        assert dir(res_instance) == dir(example_Metaclass_1('Name', (), {'field': 'just a field'}))
+
+    @pytest.mark.parametrize('ser_type', serializer_types)
+    def test_Metaclass_2(self, ser_type):
+        serializer = create_serializer(ser_type)
+        res = serializer.loads(serializer.dumps(example_Metaclass_2))
+        assert dir(res) == dir(example_Metaclass_2)
+
+        # instances comparison
+        # res_instance = res('Name', (), {'field': 'just a field'})
+        # res_instance = serializer.loads(serializer.dumps(res_instance))
+        # assert dir(res_instance) == dir(example_Metaclass_1('Name', (), {'field': 'just a field'}))
 
 class TestWithFile():
     @pytest.mark.parametrize('ser_type', serializer_types)

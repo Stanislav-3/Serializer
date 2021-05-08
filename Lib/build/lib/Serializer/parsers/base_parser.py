@@ -8,7 +8,7 @@ class BaseParser(ABC):
         Serialize object and put the result to file.
         """
         if fp is None:
-            raise ValueError("File transfer aborted")
+            raise ValueError("Invalid file format...")
 
 
     @abstractmethod
@@ -25,7 +25,7 @@ class BaseParser(ABC):
         Returns parsed object and data from the file.
         """
         if fp is None:
-            raise ValueError("File transfer aborted")
+            raise ValueError("Invalid file format...")
 
 
     @abstractmethod

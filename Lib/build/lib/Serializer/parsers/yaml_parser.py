@@ -33,7 +33,10 @@ class YamlParser(BaseParser):
         super().load(file)
 
         with open(file, 'r') as file:
-            raw_obj = YamlParser.base_loads(file.read())
+            try:
+                raw_obj = YamlParser.base_loads(file.read())
+            except Exception:
+                raise ValueError('Invalid yaml format...')
 
         if unpack:
             return Unpacker().unpack(raw_obj)
@@ -44,6 +47,10 @@ class YamlParser(BaseParser):
     def loads(self, yaml: str):
         super().loads(yaml)
 
-        raw_obj = YamlParser.base_loads(yaml)
+        try:
+            raw_obj = YamlParser.base_loads(yaml)
+        except Exception:
+            raise ValueError('Invalid yaml format...')
+
         unpacked_obj = Unpacker().unpack(raw_obj)
         return unpacked_obj

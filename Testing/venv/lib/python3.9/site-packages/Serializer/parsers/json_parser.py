@@ -29,7 +29,10 @@ class JsonParser(BaseParser):
         super().load(file)
 
         with open(file, 'r') as file:
-            raw_obj = JsonParser.base_loads(file.read())
+            try:
+                raw_obj = JsonParser.base_loads(file.read())
+            except Exception:
+                raise ValueError('Invalid json format...')
 
         if unpack:
             return Unpacker().unpack(raw_obj)
@@ -38,6 +41,11 @@ class JsonParser(BaseParser):
 
     def loads(self, json: str) -> Any:
         super().loads(json)
-        raw_obj = JsonParser.base_loads(json)
+
+        try:
+            raw_obj = JsonParser.base_loads(json)
+        except Exception:
+            raise ValueError('Invalid json format...')
+
         unpacked_obj = Unpacker().unpack(raw_obj)
         return unpacked_obj

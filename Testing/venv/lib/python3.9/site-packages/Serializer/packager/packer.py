@@ -14,13 +14,12 @@ class Packer:
             return {".META": self.metainfo, ".OBJ": dump}
 
     def funcdump(self, obj, isstatic=False):
-        obj_id = id(obj)
-
         if isinstance(obj, staticmethod):
             return self.funcdump(obj.__func__, True)
 
         function_module = getattr(obj, "__module__", None)
 
+        obj_id = id(obj)
         if function_module != None and function_module in builtin_module_names:
             self.metainfo.update({str(obj_id): {".metatype": "builtin func",
                                                 ".name": obj.__name__,
@@ -73,8 +72,8 @@ class Packer:
                     if obj.__name__ in builtin_module_names:
                         self.metainfo.update({str(obj_id): {".metatype": "module", ".name": obj.__name__}})
                     else:
-                        self.metainfo.update(
-                            {str(obj_id): {".code": get_code(obj), ".metatype": "module", ".name": obj.__name__}})
+                        self.metainfo.update({str(obj_id): {".code": get_code(obj),
+                                                            ".metatype": "module", ".name": obj.__name__}})
             except Exception:
                 self.metainfo.update({str(obj_id): {".metatype": "module", ".name": obj.__name__}})
             return {".metaid": str(obj_id)}
@@ -104,8 +103,7 @@ class Packer:
                 return {".metaid": str(type_id), ".fields": data}
 
             if inspect.isclass(obj):
-
-                mro = fetch_typereferences(obj)
+                mro = fetch_type_references(obj)
                 attrs = deconstruct_class(obj)
                 mro = [self.dump(el) for el in mro]
                 attrs = [self.dump((el[0], self.dump(el[1]), el[2])) for el in attrs]

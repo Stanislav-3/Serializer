@@ -1,4 +1,6 @@
 from datetime import datetime
+from abc import ABC
+from Serializer.packager.object_inspector import is_magicmarked
 
 example_None = None
 example_bool = True
@@ -70,6 +72,42 @@ class example_class_2(example_class_1):
         one = 'i\'m doing something...'
         two = 'other string'
         return one + two
+
+class example_class_3(ABC):
+    @staticmethod
+    def static_method():
+        return 'Hello from static method! :)'
+
+    @classmethod
+    def class_method(cls):
+        return 'Hello from class method! :)'
+
+
+class example_class_4():
+    __val = 0
+    @property
+    def Value(self):
+        return self.__val
+
+    @Value.setter
+    def Value(self, value):
+        self.__val = value
+
+class example_Metaclass_1(type):
+
+    def __new__(cls, name, bases, dct):
+        attrs = {}
+        for name, val in dct.items():
+            if is_magicmarked(name):
+                attrs[name] = val
+            else:
+                attrs[name.upper()] = val
+
+        return super(example_Metaclass_1, cls).__new__(cls, name, bases, attrs)
+
+
+class example_Metaclass_2(metaclass=example_Metaclass_1):
+    some_field = 'some_field'
 
 
 
