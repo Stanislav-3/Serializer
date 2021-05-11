@@ -6,26 +6,16 @@ import dis
 import re
 
 
-primitives = {
-    int,
-    float,
-    bool,
-    str
-}
-
-
 def is_magicmarked(s: str) -> bool:
     return re.match("^__(?:\w+)__$", s) != None
 
+
 def is_primitive(obj: object) -> bool:
-    return type(obj) in primitives
+    return type(obj) in [int, float, bool, str]
+
 
 def is_basetype(obj: object) -> bool:
-    for el in primitives:
-        if el.__name__ == obj.__name__:
-            return True
-
-    for el in [dict, list, tuple, set]:
+    for el in [int, float, bool, str, dict, list, tuple, set]:
         if el.__name__ == obj.__name__:
             return True
 
@@ -39,7 +29,7 @@ def is_instance(obj):
     return True
 
 
-def fetch_typereferences(cls):
+def fetch_type_references(cls):
     if inspect.isclass(cls):
         mro = inspect.getmro(cls)
         metamro = inspect.getmro(type(cls))
@@ -51,7 +41,7 @@ def fetch_typereferences(cls):
             return class_bases[1:-1], None
 
 
-def fetch_funcreferences(func: object):
+def fetch_func_references(func: object):
     if inspect.ismethod(func):
         func = func.__func__
 
@@ -93,27 +83,22 @@ def deconstruct_class(cls):
     attributes = inspect.classify_class_attrs(cls)
     deconstructed = []
     for attr in attributes:
-        if attr.defining_class == object or attr.defining_class == type or attr.name in ["__dict__", "__weakref__"]:
-            continue
-        else:
-            deconstructed.append((
-                attr.name,
-                attr.object,
-                attr.kind
-            ))
+        if attr.defining_class != object and attr.defining_class != type and \
+            attr.name not in ["__dict__", "__weakref__"]:
+            deconstructed.append((attr.name, attr.object, attr.kind))
+
     return deconstructed
 
 
 def deconstruct_func(func):
     code = {el: getattr(func.__code__, el) for el in func.__code__.__dir__() if not is_magicmarked(el) and "co" in el}
 
-    refs = fetch_funcreferences(func)
+    refs = fetch_func_references(func)
     defaults = func.__defaults__
     return {'.name': func.__name__, '.code': code, '.references': refs, '.defaults': defaults}
 
 
 def getfields(obj):
-    """Try to get as much attributes as possible"""
     members = inspect.getmembers(obj)
 
     cls = type(obj)

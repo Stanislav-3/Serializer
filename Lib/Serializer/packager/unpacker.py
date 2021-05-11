@@ -99,7 +99,6 @@ class Unpacker:
                         globals(),
                         src[".name"],
                         src[".defaults"],
-
                         closures
                     ]
 
