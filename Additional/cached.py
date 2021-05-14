@@ -12,35 +12,34 @@ def cached(func):
 
     def resulting_func(*args, **kwargs):
         full_arg_spec = getfullargspec(func)
-        args_name = full_arg_spec[0]
+        named_args = full_arg_spec[0]
         arguments = {}
 
-        kwargs_ = kwargs.copy()
+        kwargs_ = dict(kwargs)
 
         args_len = len(args)
-        for i in range(min(len(args_name), args_len)):
-            arguments[args_name[i]] = args[i]
+        for i in range(min(len(named_args), args_len)):
+            arguments[named_args[i]] = args[i]
 
-        while len(args_name) - args_len > 0:
-            arguments[args_name[args_len]] = kwargs[args_name[args_len]]
-            del kwargs_[args_name[args_len]]
+        while len(named_args) - args_len > 0:
+            arguments[named_args[args_len]] = kwargs[named_args[args_len]]
+            del kwargs_[named_args[args_len]]
             args_len += 1
 
         if full_arg_spec[1] is not None:
-            arguments['*args'] = args[len(args_name):]
+            arguments['*args'] = args[len(named_args):]
 
         if full_arg_spec[2] is not None:
             arguments['**kwargs'] = kwargs_
 
-        print(arguments)
         if arguments in cache:
-            print('Cached:', end=' ')
+            output = 'Cached: '
             res = results[cache.index(arguments)]
         else:
-            print('Not cached:', end=' ')
+            output = 'Not cached: '
             res = func(*args, **kwargs)
             cache.append(arguments)
             results[len(cache) - 1] = res
-        return res
+        return output + f'{res}'
 
     return resulting_func
