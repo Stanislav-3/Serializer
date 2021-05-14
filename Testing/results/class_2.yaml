@@ -1,5 +1,5 @@
 .META:
-  '140552979000256':
+  '140280161281216':
     .class:
       attrs:
       - .collection_type: tuple
@@ -10,7 +10,7 @@
       - .collection_type: tuple
         .list:
         - __init__
-        - .metaid: '4325186144'
+        - .metaid: '4524270640'
         - method
       - .collection_type: tuple
         .list:
@@ -34,7 +34,7 @@
     .metatype: class
     .module: tests
     .name: example_class_1
-  '140552979001200':
+  '140280161282160':
     .class:
       attrs:
       - .collection_type: tuple
@@ -45,7 +45,7 @@
       - .collection_type: tuple
         .list:
         - __init__
-        - .metaid: '4325186288'
+        - .metaid: '4524270784'
         - method
       - .collection_type: tuple
         .list:
@@ -65,17 +65,17 @@
       - .collection_type: tuple
         .list:
         - some_class_func
-        - .metaid: '4325186432'
+        - .metaid: '4524270928'
         - method
       mro:
       - .collection_type: tuple
         .list:
-        - .metaid: '140552979000256'
+        - .metaid: '140280161281216'
       - null
     .metatype: class
     .module: tests
     .name: example_class_2
-  '4325186144':
+  '4524270640':
     .code:
       co_argcount: 1
       co_cellvars:
@@ -132,7 +132,7 @@
       - .collection_type: set
         .list:
         - b
-  '4325186288':
+  '4524270784':
     .code:
       co_argcount: 2
       co_cellvars:
@@ -211,7 +211,7 @@
       .collection_type: tuple
       .list:
       - __class__:
-          .metaid: '140552979001200'
+          .metaid: '140280161282160'
       - {}
       - str: null
         super:
@@ -219,10 +219,10 @@
           .metatype: builtin
       - .collection_type: set
         .list:
+        - c
         - __init__
         - e
-        - c
-  '4325186432':
+  '4524270928':
     .code:
       co_argcount: 1
       co_cellvars:
@@ -291,4 +291,4 @@
       - .collection_type: set
         .list: []
 .OBJ:
-  .metaid: '140552979001200'
+  .metaid: '140280161282160'

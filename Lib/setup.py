@@ -7,6 +7,7 @@ setup(
         'Serializer/factory',
         'Serializer/packager',
         'Serializer/parsers',
+        'Serializer/parsers/custom_json'
     ],
     version='3.1.3',
     description='Serializer library',

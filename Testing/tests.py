@@ -15,8 +15,8 @@ example_set = {1, 2, 3, 4, 5}
 
 example_datetime = datetime(2001, 11, 14)
 example_dict = {'3': [1, 2, 3],
-             '0.23': 32,
-             'key': (5, 'info', 8)}
+                '0.23': 32,
+                'key': (5, 'info', 8)}
 
 
 example_lambda = lambda s: f'hello from lamda! {s}'
@@ -73,7 +73,7 @@ class example_class_2(example_class_1):
         two = 'other string'
         return one + two
 
-class example_class_3(ABC):
+class example_class_3():
     @staticmethod
     def static_method():
         return 'Hello from static method! :)'

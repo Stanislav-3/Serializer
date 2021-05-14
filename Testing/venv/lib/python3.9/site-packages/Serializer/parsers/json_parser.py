@@ -1,13 +1,13 @@
 from typing import Any
-from json import dumps, loads
-
+from Serializer.parsers.custom_json.json import Json
 from Serializer.parsers.base_parser import BaseParser
 from Serializer.packager.packer import Packer
 from Serializer.packager.unpacker import Unpacker
 
+
 class JsonParser(BaseParser):
-    base_dumps = dumps
-    base_loads = loads
+    base_dumps = Json.dumps
+    base_loads = Json.loads
 
     def dump(self, obj: object, file: object = None, pack=True) -> None:
         super().dump(obj, file)

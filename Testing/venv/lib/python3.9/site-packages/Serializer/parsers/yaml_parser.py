@@ -11,10 +11,10 @@ class YamlParser(BaseParser):
     base_dumps = dump
     base_loads = load
 
-    def dump(self, obj: object, file: object = None, unpacked=True):
+    def dump(self, obj: object, file: object = None, pack=True):
         super().dump(obj, file)
 
-        if unpacked:
+        if pack:
             packed_obj = Packer().pack(obj)
         else:
             packed_obj = obj

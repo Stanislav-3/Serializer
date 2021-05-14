@@ -16,3 +16,6 @@ Serializer/parsers/__init__.py
 Serializer/parsers/base_parser.py
 Serializer/parsers/json_parser.py
 Serializer/parsers/yaml_parser.py
+Serializer/parsers/custom_json/__init__.py
+Serializer/parsers/custom_json/decoder.py
+Serializer/parsers/custom_json/json.py

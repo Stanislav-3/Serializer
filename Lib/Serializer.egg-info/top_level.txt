@@ -2,3 +2,4 @@ Serializer
 Serializer/factory
 Serializer/packager
 Serializer/parsers
+Serializer/parsers/custom_json

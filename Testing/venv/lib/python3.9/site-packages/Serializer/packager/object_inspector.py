@@ -1,8 +1,5 @@
 import builtins
 import inspect
-import functools
-import types
-import dis
 import re
 
 
