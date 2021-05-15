@@ -3,6 +3,7 @@ from sys import builtin_module_names
 from packager.creator import *
 from packager.object_inspector import *
 
+
 class Packer:
     def pack(self, obj: object):
         self.metainfo = {}
@@ -104,8 +105,7 @@ class Packer:
                 return {".metaid": str(type_id), ".fields": data}
 
             if inspect.isclass(obj):
-
-                mro = fetch_typereferences(obj)
+                mro = fetch_type_references(obj)
                 attrs = deconstruct_class(obj)
                 mro = [self.dump(el) for el in mro]
                 attrs = [self.dump((el[0], self.dump(el[1]), el[2])) for el in attrs]

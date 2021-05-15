@@ -1,5 +1,4 @@
 from datetime import datetime
-from abc import ABC
 from Serializer.packager.object_inspector import is_magicmarked
 
 example_None = None

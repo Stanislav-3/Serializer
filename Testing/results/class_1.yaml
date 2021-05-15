@@ -1,5 +1,5 @@
 .META:
-  '140280161281216':
+  '140558597307136':
     .class:
       attrs:
       - .collection_type: tuple
@@ -10,7 +10,7 @@
       - .collection_type: tuple
         .list:
         - __init__
-        - .metaid: '4524270640'
+        - .metaid: '4459893808'
         - method
       - .collection_type: tuple
         .list:
@@ -34,7 +34,7 @@
     .metatype: class
     .module: tests
     .name: example_class_1
-  '4524270640':
+  '4459893808':
     .code:
       co_argcount: 1
       co_cellvars:
@@ -57,7 +57,7 @@
         - null
         - 10
       co_filename: /Users/stanislav/Desktop/Serializer/Testing/tests.py
-      co_firstlineno: 56
+      co_firstlineno: 55
       co_flags: 67
       co_freevars:
         .collection_type: tuple
@@ -92,4 +92,4 @@
         .list:
         - b
 .OBJ:
-  .metaid: '140280161281216'
+  .metaid: '140558597307136'

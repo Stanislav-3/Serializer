@@ -30,8 +30,8 @@ class Json(ABC):
             for key in obj:
                 key_ = Json.dumps(key)
                 value_ = Json.dumps(obj[key])
-                # if key_[0] != '"':
-                #     key_ = f'"{key_}"'
+                if key_[0] != '"':
+                    key_ = f'"{key_}"'
 
                 res += f', {key_}: {value_}'
 

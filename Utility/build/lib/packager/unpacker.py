@@ -6,6 +6,7 @@ from sys import modules
 from packager.creator import *
 from packager.object_inspector import *
 
+
 class Unpacker:
     def unpack(self, src: object, __globals__=globals()):
         self._globals = __globals__
@@ -36,7 +37,6 @@ class Unpacker:
 
         elif isinstance(src, list):
             return [self.load(el) for el in src]
-
 
         elif isinstance(src, dict):
             if src.get(".metaid") != None and src.get(".metatype") == None:
@@ -102,7 +102,6 @@ class Unpacker:
                         globals(),
                         src[".name"],
                         src[".defaults"],
-
                         closures
                     ]
 
@@ -126,14 +125,14 @@ class Unpacker:
 
                     class_info = src[".class"]
                     mro = self.load(class_info["mro"])
-                    cls = create_classbase(src[".name"], mro)
+                    cls = create_class(src[".name"], mro)
 
                     self.metatypes[id_] = cls
                     self.proceeded.append(id_)
 
                     attrs = self.load(class_info["attrs"])
 
-                    return set_classattrs(cls, attrs)
+                    return set_class_attrs(cls, attrs)
 
                 elif metatype == "module":
                     try:
